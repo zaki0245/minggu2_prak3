@@ -7,41 +7,41 @@ use Illuminate\Http\Request;
 class company extends Controller
 {
     public function home(){
-        return 'Selamat Datang';
+        return view('home');
     }
 
     public function news($news){
-        return 'Berita '.$news;
+        return view('news',['new'=>$news]);
     }
 
     public function about(){
-        return 'About us';
+        return view('obout-us');
     }
 
     public function comment($nama,$pesan){
-        return $nama.' memberi komentar : '.$pesan;
+        return view('comment',['namas'=>$nama,'pesans'=>$pesan]);
     }
 
     public function mi(){
-        return 'Halaman program studi manajemen informatika';
+        return view('mi');
     }
     public function ti(){
-        return 'Halaman program studi teknik informatika';
+        return view('ti');
     }
 
     public function perkantoran(){
-        return 'ini perkantoran';
+        return view('perkantoran');
     }
 
     public function laboratorium(){
-        return 'ini laboratorium';
+        return view('laboratorium');
     }
 
     public function kelas(){
-        return 'ini kelas';
+        return view('kelas');
     }
 
     public function lain(){
-        return 'ini sarana lain nya';
+        return view('lainnya');
     }
 }
