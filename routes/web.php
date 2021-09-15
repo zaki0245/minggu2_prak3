@@ -17,31 +17,19 @@ use App\Http\Controllers\company;
 Route::get('home', [company::class,'home']);
 
 Route::prefix('prodi')->group(function(){
-     Route::get('/manajemen-informatika', function(){
-        return 'Halaman program studi manajemen informatika';
-    });
-    Route::get('/teknik-informatika', function(){
-        return 'Halaman program studi teknik informatika';
-    });
+    Route::get('/manajemen-informatika', [company::class,'mi']);
+    Route::get('/teknik-informatika',  [company::class,'ti']);
 });
 
 Route::get('news/{news}', [company::class,'news']);
 
 Route::prefix('sarana')->group(function(){
-    Route::get('/perkantoran', function(){
-       return 'Ini perkantoran';
-    });
-    Route::get('/laboratorium', function(){
-       return 'Ini laboratorium';
-    });
-    Route::get('/kelas', function(){
-        return 'Ini kelas';
-    });
-    Route::get('/lainnya', function(){
-        return 'Sarana lainnya';
-    });
+    Route::get('/perkantoran', [company::class,'perkantoran']);
+    Route::get('/laboratorium', [company::class,'laboratorium']);
+    Route::get('/kelas', [company::class,'kelas']);
+    Route::get('/lainnya', [company::class,'lain']);
 });
 
 Route::get('about', [company::class,'about']);
 
-Route::get('comment/{comment}', [company::class,'comment']);
+Route::get('comment/{nama}/{pesan}', [company::class,'comment']);

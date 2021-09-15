@@ -18,7 +18,30 @@ class company extends Controller
         return 'About us';
     }
 
-    public function comment($comment){
-        return $comment.' memberi komentar';
+    public function comment($nama,$pesan){
+        return $nama.' memberi komentar : '.$pesan;
+    }
+
+    public function mi(){
+        return 'Halaman program studi manajemen informatika';
+    }
+    public function ti(){
+        return 'Halaman program studi teknik informatika';
+    }
+
+    public function perkantoran(){
+        return 'ini perkantoran';
+    }
+
+    public function laboratorium(){
+        return 'ini laboratorium';
+    }
+
+    public function kelas(){
+        return 'ini kelas';
+    }
+
+    public function lain(){
+        return 'ini sarana lain nya';
     }
 }
